@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="styles/form.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+  <div class="div-block">
+    <img src="Picture1.jpg" loading="lazy" class="image-1">
+    <div class="text-block">Library management software</div>
+    <div class="text-block-2"> Welcome to Library management software</div>
+    <div id="nav" class="nav1">
+      <nav>
+        <ul>
+          <li>
+            <a onclick="home()">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Home</span>
+            </a>
+          </li>
+          <li>
+            <a onclick="bookrecord()">
+              <i class="fas fa-book-medical"></i>
+              <span class="nav-item">Book record</span>
+            </a>
+          </li>
+          <li><a onclick="previous()">
+              <i class="fas fa-chart-line"></i>
+              <span class="nav-item">Previous record</span>
+            </a>
+          </li>
+          <li><a>
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Help</span>
+            </a>
+          </li>
+          <li><a class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- main div -->
+  <div id="semesterid">
+    <ul role="list" class="list-2">
+      <li>
+        <a class="semester-link" data-semester="1st_semester" onclick="openSection()">
+          <span style="width: 150px;">Add/delete student</span>
+        </a>
+      </li>
+      <li>
+        <a class="semester-link" data-semester="1st_semester" onclick="openTwoSections()">
+          <span> 1st semester</span>
+        </a>
+      </li>
+      <li class="list-item-2">
+        <a class="semester-link" data-semester="2nd_semester" onclick="openTwoSections()">
+          <span> 2nd semester</span>
+        </a>
+      </li>
+      <li class="list-item-2">
+        <a class="semester-link" data-semester="3rd_semester" onclick="openTwoSections()">
+          <span> 3rd semester</span>
+        </a>
+      </li>
+      <li class="list-item-2">
+        <a class="semester-link" data-semester="4rth_semester" onclick="openTwoSections()">
+          <span> 4rth semester</span>
+        </a>
+      </li>
+      <li class="list-item-2">
+        <a class="semester-link" data-semester="5th_semester" onclick="openTwoSections()">
+          <span> 5th semester</span>
+        </a>
+      </li>
+      <li class="list-item-2">
+        <a class="semester-link" data-semester="6th_semester" onclick="openTwoSections()">
+          <span> 6th semester</span>
+        </a>
+      </li>
+    </ul>
+    <!-- 1st child div -->
+    <div id="detailsSection">
+      <h3 style="color: rgb(157, 255, 127);"></h3>
+      <table id="bookIssueid">
+        <thead>
+          <tr>
+            <th>BookId</th>
+            <th>AuthorName</th>
+            <th>SubjectName</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <!-- second child div -->
+    <div class="table-container">
+      <table id="student_detailsid">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th class="clickable">Librarian Name</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- add or delete a librarian' -->
+
+  <form id="formData" class="form1" action="/submit" method="post" onsubmit="return confirmAction(event, 'add or delete a librarian')">
+    <label for="username">librarian Name:</label>
+    <input type="text" id="name" name="name" required class="text-field1-position">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required class="text-field2-position">
+    <label for="semester">Select Semester:</label>
+    <select id="semester" name="semester" style="margin-left: 175px; width: 190px;">
+      <option value="1st_semester">1st semester</option>
+      <option value="2nd_semester">2nd semester</option>
+      <option value="3rd_semester">3rd semester</option>
+      <option value="4rth_semester">4rth semester</option>
+      <option value="5th_semester">5th semester</option>
+      <option value="6th_semester">6th semester</option>
+    </select>
+    <button type="submit" class="submit-button">Add/Delete Libr.</button>
+  </form>
+
+  <!-- issue or submit a book' -->
+
+  <form id="formData_addbook" action="/issuebook" method="post" onsubmit="return confirmAction(event, 'issue or submit a book')">
+    <label for="studentName" class="studentName">Librarian Name:</label>
+    <input type="text" id="studentName" name="studentName" required>
+    <label for="bookId">Book ID:</label>
+    <input type="text" id="bookId" name="bookId" required>
+    <label for="semester" class="field-label3-position">Select Semester:</label>
+    <select id="add_semester" name="add_semester" style="margin-left: 175px; width: 190px;">
+      <option value="1st_semester">1st semester</option>
+      <option value="2nd_semester">2nd semester</option>
+      <option value="3rd_semester">3rd semester</option>
+      <option value="4rth_semester">4rth semester</option>
+      <option value="5th_semester">5th semester</option>
+      <option value="6th_semester">6th semester</option>
+    </select>
+    <button type="submit" style="width: 100px; margin-left:140px; margin-top:20px;">Add/Delete</button><br>
+  </form>
+  <div id="book_nav" class="div-4">
+    <ul>
+      <li>
+        <a onclick="opencloseSection('All_bookid','book_input_detailsid','searchBook','bookInfo')">
+          <i class="fas fa-home"></i>
+          <span class="book-item">All</span>
+        </a>
+      </li>
+      <li><a onclick="opencloseSection('book_input_detailsid','All_bookid','searchBook','bookInfo')">
+          <i class="fas fa-book-medical"></i>
+          <span class="book-item">Add/delete</span>
+        </a>
+      </li>
+      <li><a onclick="opencloseSection('searchBook','All_bookid','book_input_detailsid','bookInfo')">
+          <i class="fas fa-search"></i>
+          <span class="book-item">Search</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="All_bookid" class="div-5">
+    <div class="info_book">All information about All book</div><br><br>
+    <table id="allBookInfo">
+      <thead>
+        <tr>
+          <th>S.N</th>
+          <th>B.code</th>
+          <th>Author</th>
+          <th>Subject</th>
+          <th>price</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- 'add or delete a book in the library' -->
+
+  <div id="book_input_detailsid">
+    <div class="info-li">Add & delete from Library</div>
+    <form id="addbook_inlibr" action="/addBookInLibr" method="post" onsubmit="return confirmAction(event, 'add or delete a book in the library')">
+      <label for="label1" class="field-label2-position">Book code:</label>
+      <input type="text" id="bookCode" name="bookCode">
+      <label for="label2" class="field-label3-position">Author name:</label>
+      <input type="text" id="authorName" name="authorName">
+      <label for="label3" class="field-label4-position">Subject name:</label>
+      <input type="text" id="subjectName" name="subjectName">
+      <label for="label4" class="field-label5-position">price:</label>
+      <input type="text" id="price" name="price">
+      <button type="submit" class="button-position1" style="margin-left: 120px; margin-top: 10px; width: 150px;">Add/delete from library</button>
+    </form>
+  </div>
+
+  <!-- for search book -->
+   
+  <div id="searchBook">
+    <h3 style="color: rgb(157, 255, 127); margin-left: 100px; padding-top: 10px;"> * Search book from here *</h3>
+    <form id="findBookForm" style="border-radius: 0px; border-color: rgba(0, 0, 0, 0); box-shadow: 7px 6px 5px 0 hsla(0, 0%, 0%, 0);">
+      <label for="bookId">Enter Book ID:</label>
+      <input type="text" id="bookIdd" name="bookIdd" required>
+      <button type="submit" style="margin-left: auto; margin-right: auto; margin-top: 20px;">Search Book</button>
+    </form>
+  </div>
+  <div id="bookInfo"></div>
+  <div id="recordid">
+    <div class="pre-text">All info about Previous record</div>
+    <table class="pr" style="margin-top: 20px; margin-left: auto; margin-right: auto;">
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+          <th>Column 4</th>
+          <th>Column 5</th>
+          <th>Column 6</th>
+          <th>Column 7</th>
+          <th>Column 8</th>
+          <th>Column 9</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="text-block-3"> Copyright 2024: all right reserved 🤖Powered by jarvishightech technology</div>
+  <script src="scripts/1.js"></script>
+  <script src="scripts/form.js"></script>
+  <script>
+    function confirmAction(event, action) {
+      event.preventDefault(); // Prevent the form from submitting immediately
+      if (confirm(`Are you sure you want to ${action}?`)) {
+        event.target.submit(); // Submit the form if the user confirms
+      }
+    }
+  </script>
+
+<script>
+  // public/forgotPassword.js
+  document.getElementById('forgotPasswordForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+
+      try {
+          const response = await fetch('/forgotPassword', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ email })
+          });
+
+          const result = await response.text();
+          alert(result);
+      } catch (error) {
+          console.error('Error:', error);
+      }
+  });
+
+  document.getElementById('verifyOTPForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('verifyEmail').value;
+      const otp = document.getElementById('otp').value;
+
+      try {
+          const response = await fetch('/verifyOTP', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ email, otp })
+          });
+
+          const result = await response.text();
+          alert(result);
+      } catch (error) {
+          console.error('Error:', error);
+      }
+  });
+
+  document.getElementById('resetPasswordForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('resetEmail').value;
+      const newPassword = document.getElementById('newPassword').value;
+
+      try {
+          const response = await fetch('/resetPassword', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ email, newPassword })
+          });
+
+          const result = await response.text();
+          alert(result);
+      } catch (error) {
+          console.error('Error:', error);
+      }
+  });
+
+</script>
+</body>
+</html>

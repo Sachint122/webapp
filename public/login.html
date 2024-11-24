@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to library management software</title>
+  <link rel="stylesheet" href="styles/login.css">
+  <style>
+    .eye-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body> <!-- partial:index.partial.html -->
+
+  <section id="back"> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span>
+
+    <div class="signin" id="login">
+      <div class="content">
+        <h2>Sign In</h2>
+        <div class="form">
+          <div class="inputBox">
+            <input type="text" id="username" placeholder="Enter your username" required>
+          </div>
+          <div class="inputBox" style="position: relative;">
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <a class="eye-icon" onclick="togglePasswordVisibility()">👁️</a>
+          </div>
+          <div class="inputBox">
+            <input type="button" value="Login" onclick="validateLogin()">
+            <input type="button" value="if you forgotPassword click me" style="font-size: 18px; margin-top: px; background-color: rgba(255, 248, 248, 0); color: red;"
+             onclick="openResetForm()">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="signin" id="forget" style="display: none;">
+      <div class="content">
+        <h2>Forgot Password</h2>
+        <div class="form">
+          <form id="forgotPasswordForm">
+            <div class="inputBox">
+              <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="inputBox">
+              <button type="submit" onclick=" openResetPasswordForm()" class="bb">Reset Password</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="signin" id="otp" style="display: none;">
+      <div class="content">
+        <h2>Verify OTP</h2>
+        <div class="form">
+          <form id="verifyOTPForm">
+            <div class="inputBox">
+              <input type="email" id="verifyEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="inputBox">
+              <input type="text" id="otp" placeholder="Enter OTP" required>
+            </div>
+            <div class="inputBox">
+              <input type="button" value="submit" onclick="openreset()">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+        
+    <div class="signin" id="reset" style="display: none;">
+      <div class="content">
+        <h2>Reset Password</h2>
+        <div class="form">
+          <form id="resetPasswordForm">
+            <div class="inputBox">
+              <input type="email" id="resetEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="inputBox">
+              <input type="password" id="newPassword" placeholder="Enter new password" required>
+            </div>
+            <div class="inputBox">
+              <input type="button" value="Reset Password" onclick="opensignin()">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section> <!-- partial -->
+</body>
+
+</html>
+<script src="scripts/1.js"></script>
+<script>
+  // Show and hide different forms based on user actions
+  function openResetForm() {
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('forget').style.display = 'block';
+  }
+
+  function openOTPForm() {
+    document.getElementById('forget').style.display = 'none';
+    document.getElementById('otp').style.display = 'block';
+  }
+
+  function openResetPasswordForm() {
+    document.getElementById('otp').style.display = 'none';
+    document.getElementById('reset').style.display = 'block';
+  }
+
+  function openSignInForm() {
+    document.getElementById('reset').style.display = 'none';
+    document.getElementById('login').style.display = 'block';
+  }
+
+  // Handle Forgot Password form submission
+  document.getElementById('forgotPasswordForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+
+    try {
+      const response = await fetch('/forgotPassword', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      });
+
+      const result = await response.text();
+      alert(result);
+      if (result === 'OTP sent to your email') {
+        openOTPForm();
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  });
+
+  // Handle Verify OTP form submission
+  document.getElementById('verifyOTPForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('verifyEmail').value;
+    const otp = document.getElementById('otp').value;
+
+    try {
+      const response = await fetch('/verifyOTP', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, otp })
+      });
+
+      const result = await response.text();
+      alert(result);
+      if (result === 'OTP verified') {
+        openResetPasswordForm();
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  });
+
+  // Handle Reset Password form submission
+  document.getElementById('resetPasswordForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('resetEmail').value;
+    const newPassword = document.getElementById('newPassword').value;
+
+    try {
+      const response = await fetch('/resetPassword', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, newPassword })
+      });
+
+      const result = await response.text();
+      alert(result);
+      if (result === 'Password reset successfully') {
+        openSignInForm();
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  });
+</script>
+</body>
+
+</html>

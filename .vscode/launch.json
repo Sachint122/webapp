@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/public/home.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/public/home.html"
+        },
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3001/public/home.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3001/public/home.html"
+        }
+    ]
+}

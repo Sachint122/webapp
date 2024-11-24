@@ -1,0 +1,310 @@
+.body {
+    height: 780px;
+    padding-left: 20px;
+}
+
+.div-block {
+    height: 780px;
+    background-image: url(images/back.jpg);
+    background-size: auto;
+    width: auto;
+
+}
+
+.image-1 {
+    height: 90px;
+    border-radius: 20px;
+}
+
+li {
+    margin-top: 16px;
+    list-style-type: none;
+}
+
+.text-block {
+    /* outline: 2px solid #00ffe6; */
+    float: none;
+    text-align: center;
+    color: #ff0303;
+    object-fit: fill;
+    margin-top: -45px;
+    margin-left: 200px;
+    width: auto;
+    height: 39px;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 35px;
+    overflow: hidden;
+}
+
+.text-block-2 {
+    color: #ff0303;
+    text-align: center;
+    border: 1px solid #bebfdc;
+    border-radius: 20px;
+    outline: 2px solid #00ffe6;
+    width: auto;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.text-block-3 {
+    color: #d9ff0371;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0; /* Center horizontally */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    margin-bottom: 10px;
+    height: 40px;
+    backdrop-filter: contrast(100%);
+    text-align: center;
+    border-radius: 20px;
+    width: auto;
+    font-size: 20px;
+    overflow: hidden;
+}
+.list-2 {
+    position: relative;
+    grid-column-gap: 18px;
+    grid-row-gap: 18px;
+    -webkit-backdrop-filter: saturate(200%);
+    backdrop-filter: saturate(200%);
+    color: #e2ff06;
+    text-align: left;
+    text-transform: capitalize;
+    height: 40px;
+    border: 1px solid #c8ff00;
+    border-radius: 13px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: -650px;
+    margin-left: 10px;
+    padding-bottom: 9px;
+    padding-left: 26px;
+    margin-left: 10px;
+    padding-right: 0px;
+    list-style-type: none;
+    display: flex;
+    box-shadow: 20px 12px 17px rgba(0, 0, 0, .2);
+}
+
+table {
+    position: relative;
+    border-collapse: collapse;
+    height: 230px;
+    color: #e2ff06;
+}
+
+#student_detailsid {
+    /* display: none; */
+    padding-left: 30px;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+th,
+td {
+    outline: 1px solid #00ffe6;
+    text-align: center;
+    padding: 8px;
+    -webkit-backdrop-filter: saturate(200%);
+    backdrop-filter: saturate(200%);
+}
+
+th {
+    color: red;
+
+}
+td{
+    height: 20px;
+}
+.semester-link {
+    margin-left: -10px;
+    font-size: 16px;
+    width: 110px;
+    /* padding-top: 15px; */
+    transition: all 0.5s ease;
+}
+
+#semesterid {
+    /* height: 330px; */
+    display: none;
+    margin-left: 80px;
+    border-radius: 20px;
+    box-shadow: 9px 7px 8px 10px rgba(0, 0, 0, .2);
+    transition: all 0.5s ease;
+}
+
+#detailsSection {
+    display: none;
+    margin-right: 270px;
+    margin-left: auto;
+    overflow-y: auto;
+    max-height: 330px;
+    /* Adjust the maximum height as needed */
+    height: 330px;
+    border-color: hsla(209, 100.00%, 62.89%, 1.00);
+    box-shadow: 7px 6px 5px 9px hsla(242, 100%, 45%, 0.2);
+    border-radius: 20px;
+}
+
+.table-container {
+    display: block;
+    margin-left: auto;
+    margin-top: -320px;
+    width: 250px;
+    background-color: rgb(16, 16, 16);
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    max-height: 330px;
+    /* Adjust the maximum height as needed */
+    border-radius: 20px;
+  
+}
+
+#bookIssueid {
+    /* height: 330px; */
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-5 {
+    /* display: block; */
+    padding: 30px;
+    margin-top: -160px;
+    display: none;
+    overflow-y: auto;
+    max-height: 530px;
+    height: 550px;
+    width: 450px;
+    border-radius: 20px;
+    border-color: hsla(209, 100.00%, 62.89%, 1.00);
+    box-shadow: 7px 6px 5px 9px hsla(242, 100%, 45%, 0.2);
+    transition: all 0.5s ease;
+
+}
+
+.info_book {
+    /* outline: 2px solid #00ffe6; */
+    margin-top: -10px;
+    float: none;
+    text-align: center;
+    color: #ff0303;
+    object-fit: fill;
+    width: auto;
+    height: 30px;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 35px;
+    overflow: hidden;
+    border-radius: 20px;
+    border-color: hsla(209, 100.00%, 62.89%, 1.00);
+    box-shadow: 7px 6px 5px 9px hsla(242, 100%, 45%, 0.2);
+    transition: all 0.5s ease;
+}
+
+#book_input_detailsid {
+    margin-top: -110px;
+    display: none;
+    padding: 20px;
+    border-radius: 20px;
+    border-color: hsla(209, 100.00%, 62.89%, 1.00);
+    box-shadow: 7px 6px 5px 9px hsla(242, 100%, 45%, 0.2);
+    transition: all 0.5s ease;
+    width: 400px;
+    height: 265px;
+}
+
+.info-li {
+    float: none;
+    text-align: center;
+    color: #ff0303;
+    object-fit: fill;
+    width: auto;
+    height: 30px;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 35px;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+
+#bookInfo {
+    margin-top: 50px;
+    margin-left: 300px;
+    display: none;
+    /* background-color: red; */
+    width: 350px;
+    height: 150px;
+    border-radius: 20px;
+    border-color: hsla(209, 100.00%, 62.89%, 1.00);
+    box-shadow: 7px 6px 5px 9px hsla(242, 100%, 45%, 0.2);
+    transition: all 0.5s ease;
+}
+#h1{
+    color: #ff0303;
+    text-align: center;
+    width: auto;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 25px;
+}
+.book-info {
+    /* text-decoration-color: #ff0303; */
+    border-radius: 20px;
+    border-color: hsla(209, 100.00%, 62.89%, 1.00);
+    box-shadow: 7px 6px 5px 9px hsla(242, 100%, 45%, 0.2);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.book-details {
+    margin-top: 30px;
+}
+
+.book-details p {
+    color: rgb(157, 255, 127);
+    margin: 5px 0;
+}
+
+#recordid {
+    display: none;
+    margin-top: -630px;
+    padding-top: 20px;
+    height: 350px;
+    width: auto;
+    border-radius: 20px;
+    box-shadow: 9px 7px 8px 10px rgba(0, 0, 0, .2);
+    transition: all 0.5s ease;
+}
+
+.pre-text {
+    float: none;
+    text-align: center;
+    color: #ff0303;
+    object-fit: fill;
+    width: auto;
+    height: auto;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 35px;
+    overflow: hidden;
+
+}
