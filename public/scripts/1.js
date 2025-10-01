@@ -12,7 +12,7 @@ var searchBookDiv = document.getElementById('searchBook');
 var bookInfoDiv = document.getElementById('bookInfo');
 
 nav.addEventListener('mouseover', () => {
-  semesterDiv.style.marginLeft = "235px";
+  // nav2.style.backgroundColor="red";
   book_navDiv.style.marginLeft = "235px";
   recordDiv.style.marginLeft = "235px";
   student_input_formdiv.style.marginLeft = "auto";
@@ -171,15 +171,17 @@ function togglePasswordVisibility() {
 function validateLogin() {
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
-
-
-  // Replace 'yourPassword' with the correct password for validation
-  var correctPassword = 'yourPassword';
-
-  if (password === correctPassword && username === 'jarvis') {
-    document.getElementById('back').style.display = 'none';
-    window.location.href = 'home.html';
+  console.log(typeof (username), username);
+  console.log(typeof (password), password);
+  if (username == 'jarvis') {
+    if (password == 'jarvis') {
+      alert('Login successful!');
+      document.getElementById('back').style.display = 'none';
+      window.location.href = 'home.html';
+    } else {
+      alert('Incorrect password. Please try again.');
+    }
   } else {
-    alert('Incorrect password. Please try again.');
+    alert('Incorrect username. Please try again.');
   }
 }
